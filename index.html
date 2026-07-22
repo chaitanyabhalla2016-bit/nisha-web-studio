@@ -12,21 +12,47 @@
     <nav>
         <div class="container">
             <div class="nav-content">
-                <a href="./index.html" class="logo"><img src="./assets/images/NWS_Nav_logo.png" alt=""></a>
-                <div class="nav-links">
+
+                <a href="./index.html" class="logo">
+                    <img src="./assets/images/NWS_Nav_logo.png" alt="Nisha Web Studio">
+                </a>
+
+                <div class="nav-links" id="primary-navigation">
+                    <button class="menu-close-btn"
+                            type="button"
+                            aria-label="Close navigation">
+                        &times;
+                    </button>
+
                     <a class="nav-link active" href="#header">home</a>
                     <a class="nav-link" href="#services">services</a>
                     <a class="nav-link" href="#projects">projects</a>
                     <a class="nav-link" href="#testimonials">testimonials</a>
+
+                    <a href="#cta" class="btn btn-primary mobile-cta">
+                        let's talk ➡
+                    </a>
                 </div>
-                <a href="#cta" class="btn btn-primary">let's talk ➡</a>
-                            <!-- <button class="menu-btn" aria-label="Open Menu">
-                ☰
-            </button> -->
+
+                <a href="#cta" class="btn btn-primary desktop-cta">
+                    let's talk ➡
+                </a>
+
+                <button class="menu-btn"
+                        type="button"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                        aria-controls="primary-navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
             </div>
-        </div>    
+        </div>
     </nav>
+
+    <div class="menu-overlay"></div>
     <header id="header">
         <div class="container">
             <div class="hero">
