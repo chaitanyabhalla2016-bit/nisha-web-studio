@@ -90,62 +90,43 @@ document.addEventListener("keydown", event => {
 
 
 /* ==============================
-   THEME SWITCH
+   THEME TOGGLE
 ================================ */
 
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = document.querySelector(".theme-icon");
 const html = document.documentElement;
 
+const savedTheme = localStorage.getItem("theme");
 
-function setTheme(theme) {
-
-    html.setAttribute("data-theme", theme);
-
-    const isDark = theme === "dark";
-
-    themeIcon.textContent = isDark ? "☀️" : "🌙";
-
-    themeToggle.setAttribute(
-        "aria-label",
-        isDark
-            ? "Switch to light theme"
-            : "Switch to dark theme"
-    );
-
-    localStorage.setItem("nws-theme", theme);
+if (savedTheme) {
+    html.setAttribute("data-theme", savedTheme);
 }
 
+function updateThemeIcon() {
+    const currentTheme = html.getAttribute("data-theme");
 
-/* Check whether the user already chose a theme */
-
-const savedTheme = localStorage.getItem("nws-theme");
-
-
-if (savedTheme === "dark" || savedTheme === "light") {
-
-    setTheme(savedTheme);
-
-} else {
-
-    setTheme(
-        html.getAttribute("data-theme") || "light"
-    );
-
+    if (currentTheme === "dark") {
+        themeIcon.textContent = "☀️";
+        themeToggle.setAttribute("aria-label", "Switch to light theme");
+    } else {
+        themeIcon.textContent = "🌙";
+        themeToggle.setAttribute("aria-label", "Switch to dark theme");
+    }
 }
 
-
-/* Toggle theme */
+updateThemeIcon();
 
 themeToggle.addEventListener("click", () => {
 
-    const currentTheme =
-        html.getAttribute("data-theme");
+    const currentTheme = html.getAttribute("data-theme");
 
-    setTheme(
-        currentTheme === "dark"
-            ? "light"
-            : "dark"
-    );
+    const newTheme =
+        currentTheme === "dark" ? "light" : "dark";
 
+    html.setAttribute("data-theme", newTheme);
+
+    localStorage.setItem("theme", newTheme);
+
+    updateThemeIcon();
 });
