@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
 </head>
 <body>
     <a class="top-btn" href="#header">⬆</a>
+    
     <nav>
         <div class="container">
             <div class="nav-content">
@@ -34,19 +35,28 @@
                     </a>
                 </div>
 
-                <a href="#cta" class="btn btn-primary desktop-cta">
-                    let's talk ➡
-                </a>
+                <div class="nav-actions">
+                    <button class="theme-toggle"
+                            type="button"
+                            aria-label="Switch to dark theme"
+                            title="Switch theme">
+                        <span class="theme-icon" aria-hidden="true">🌙</span>
+                    </button>
 
-                <button class="menu-btn"
-                        type="button"
-                        aria-label="Open navigation"
-                        aria-expanded="false"
-                        aria-controls="primary-navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                    <a href="#cta" class="btn btn-primary desktop-cta">
+                        let's talk ➡
+                    </a>
+
+                    <button class="menu-btn"
+                            type="button"
+                            aria-label="Open navigation"
+                            aria-expanded="false"
+                            aria-controls="primary-navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
 
             </div>
         </div>
@@ -356,10 +366,10 @@
                         resources
                     </h4>
                     <div class="footer-links">
-                        <a class="footer-link" href="javscript:void(0);">blogs</a>
-                        <a class="footer-link" href="javscript:void(0);">faq</a>
-                        <a class="footer-link" href="javscript:void(0);">privacy policy</a>
-                        <a class="footer-link" href="javscript:void(0);">terms & conditions</a>
+                        <a class="footer-link" href="javascript:void(0);">blogs</a>
+                        <a class="footer-link" href="javascript:void(0);">faq</a>
+                        <a class="footer-link" href="javascript:void(0);">privacy policy</a>
+                        <a class="footer-link" href="javascript:void(0);">terms & conditions</a>
                     </div>
                 </div>
                 <div class="footer-card">
@@ -369,8 +379,16 @@
                     <p class="footer-text">subscribe to get tips, updates and exclusive offers.</p>
                     <form action="">
                         <div class="input-group">
-                            <input type="email" id="userEmail">
-                            <a class="btn-form" id="subscribeBtn"><img src="./assets/icons/footer_paper_plane.svg" alt=""></a>
+                            <input type="email"
+                                   id="userEmail"
+                                   placeholder="Your email"
+                                   aria-label="Email address">
+                            <button class="btn-form"
+                                    id="subscribeBtn"
+                                    type="submit"
+                                    aria-label="Subscribe">
+                                <img src="./assets/icons/footer_paper_plane.svg" alt="">
+                            </button>
                         </div>
                     </form>
                 </div>
